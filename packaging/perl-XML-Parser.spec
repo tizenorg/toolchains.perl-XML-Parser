@@ -6,7 +6,7 @@ Summary:        A low level Perl module for parsing XML either via trees or stre
 Group:          Development/Libraries
 License:        GPL+ or Artistic
 Url:            http://search.cpan.org/dist/XML-Parser/
-Source0:        http://www.cpan.org/authors/id/M/MS/MSERGEANT/XML-Parser-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.bz2
 
 BuildRequires:  perl(ExtUtils::MakeMaker)
 BuildRequires:  expat-devel
@@ -25,7 +25,7 @@ creation time.
 
 
 %prep
-%setup -q -n XML-Parser-%{version} 
+%setup
 chmod 644 samples/{canonical,xml*}
 %{__perl} -pi -e 's|^#!/usr/local/bin/perl\b|#!%{__perl}|' samples/{canonical,xml*}
 
