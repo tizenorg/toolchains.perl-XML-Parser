@@ -2,15 +2,16 @@ Name:           perl-XML-Parser
 Version:        2.36
 Release:        3
 Summary:        A low level Perl module for parsing XML either via trees or streaming
-
 Group:          Development/Libraries
 License:        GPL+ or Artistic
 Url:            http://search.cpan.org/dist/XML-Parser/
 Source0:        %{name}-%{version}.tar.bz2
+Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
 BuildRequires:  perl(ExtUtils::MakeMaker)
+BuildRequires:  perl(ExtUtils::MakeMaker)
+BuildRequires:  perl(ExtUtils::ParseXS)
 BuildRequires:  expat-devel
-Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
 %description
 This module provides ways to parse XML documents. It is built on top
@@ -52,4 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %{perl_vendorarch}/XML/*
 %{perl_vendorarch}/auto/XML/*
-%doc %{_mandir}/man3/*.3*
+#%doc %{_mandir}/man3/*.3*
