@@ -9,7 +9,6 @@ Source0:        %{name}-%{version}.tar.bz2
 Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 
 BuildRequires:  perl(ExtUtils::MakeMaker)
-BuildRequires:  perl(ExtUtils::MakeMaker)
 BuildRequires:  perl(ExtUtils::ParseXS)
 BuildRequires:  expat-devel
 
