@@ -52,4 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %{perl_vendorarch}/XML/*
 %{perl_vendorarch}/auto/XML/*
-#%doc %{_mandir}/man3/*.3*
+%doc %{_mandir}/man3/*.3*
