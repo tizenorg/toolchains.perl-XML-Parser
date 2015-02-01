@@ -11,8 +11,6 @@ Source0:        http://www.cpan.org/authors/id/M/MS/MSERGEANT/XML-Parser-%{versi
 BuildRequires:  perl(ExtUtils::MakeMaker)
 BuildRequires:  expat-devel
 Requires:       perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
-#!BuildIgnore:  perl-XML-Parser-x86-arm
-#!BuildIgnore:  perl-x86-arm
 
 %description
 This module provides ways to parse XML documents. It is built on top
@@ -24,6 +22,7 @@ created. These options are then passed on to the Expat object on each
 parse call. They can also be given as extra arguments to the parse
 methods, in which case they override options given at XML::Parser
 creation time.
+
 
 %prep
 %setup -q -n XML-Parser-%{version} 
@@ -42,12 +41,8 @@ find $RPM_BUILD_ROOT -type f -name '*.bs' -a -size 0 -exec rm -f {} ';'
 find $RPM_BUILD_ROOT -type d -depth -exec rmdir {} 2>/dev/null ';'
 chmod -R u+w $RPM_BUILD_ROOT/*
 
-%check
-make test
-
 %clean 
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(-,root,root,-)
